@@ -10,6 +10,15 @@ The trivia is a game that allow users to test their knowledge by playing a simpl
 5) Play the quiz game, randomizing either all questions or within a specific category. 
 
 ## Getting Started
+### Dependencies Installation:
+Developers using this project should have Python3, pip3, nodeJS, and npm installed.
+
+#### Installing frontend dependencies:
+This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
+
+```bash
+npm install
+```
 
 There are `TODO` comments throughout project. Start by reading the READMEs in:
 
