@@ -77,7 +77,6 @@ The API will return Four error types when requests fail:
 * 422: Unprocessable
 * 400: Bad request
 * 500: Internal server error
-There are `TODO` comments throughout project. Start by reading the READMEs in:
 
 ## Endpoints
 ### GET /categories
