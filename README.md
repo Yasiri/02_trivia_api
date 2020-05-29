@@ -1,6 +1,6 @@
 # Trivia API Project - Udacity
  
- # Full Stack API Final Project
+# Full Stack API Final Project
 The trivia is a game that allow users to test their knowledge by playing a simple game of randomized questions. The goal of this project is to structure plan, implement, and test the API to Complete the trivia app. where the application must meet the following requirements:
 
 1) Display questions - both all questions and by category. Questions should show the question, category and difficulty rating by default and can show/hide the answer. 
@@ -205,7 +205,8 @@ There are `TODO` comments throughout project. Start by reading the READMEs in:
   - Results are paginated in groups of 10. 
 * Sample:
   - curl -X DELETE http://127.0.0.1:5000/questions/10
-  ```
+  
+```
   {
   "deleted": 6,
   "questions": [
@@ -353,7 +354,7 @@ There are `TODO` comments throughout project. Start by reading the READMEs in:
   "success": true,
   "total_questions": 20
 }
-  ```
+```
   
 ### POST /questions
 - endpoint to POST a new question which will require the question and answer text, category, and difficulty score. 
@@ -361,9 +362,9 @@ There are `TODO` comments throughout project. Start by reading the READMEs in:
   - Creates a new question using JSON request
   - Returns JSON object with the new created question
 * Sample:
-  curl -X POST -H "Content-Type: application/json" -d '{ "question": "Which river flows through Paris?", "answer": "River Seine", "difficulty": 3, "category": "4" }' http://127.0.0.1:5000/questions
+  - curl -X POST -H "Content-Type: application/json" -d '{ "question": "Which river flows through Paris?", "answer": "River Seine", "difficulty": 3, "category": "4" }' http://127.0.0.1:5000/questions
 ```
-  {
+ {
   "created": 27,
   "question_created": "Which river flows through Paris?",
   "questions": [
@@ -519,3 +520,146 @@ There are `TODO` comments throughout project. Start by reading the READMEs in:
   "total_questions": 21
 }
 ```
+
+## POST /questions/search
+* General:
+  - Searches for questions using search term in JSON format
+  - Returns object with paginated matching questions.
+* Sample:
+  - curl -X POST -H "Content-Type: application/json" -d '{"searchTerm": "what"}' http://127.0.0.1:5000/questions/search
+```
+{
+  "questions": [
+    {
+      "answer": "Muhammad Ali",
+      "category": 4,
+      "difficulty": 1,
+      "id": 9,
+      "question": "What boxer's original name is Cassius Clay?"
+    },
+    {
+      "answer": "Apollo 13",
+      "category": 5,
+      "difficulty": 4,
+      "id": 2,
+      "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+    },
+    {
+      "answer": "Tom Cruise",
+      "category": 5,
+      "difficulty": 4,
+      "id": 4,
+      "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+    },
+    {
+      "answer": "Lake Victoria",
+      "category": 3,
+      "difficulty": 2,
+      "id": 13,
+      "question": "What is the largest lake in Africa?"
+    },
+    {
+      "answer": "Mona Lisa",
+      "category": 2,
+      "difficulty": 3,
+      "id": 17,
+      "question": "La Giaconda is better known as what?"
+    },
+    {
+      "answer": "The Liver",
+      "category": 1,
+      "difficulty": 4,
+      "id": 20,
+      "question": "What is the heaviest organ in the human body?"
+    },
+    {
+      "answer": "Blood",
+      "category": 1,
+      "difficulty": 4,
+      "id": 22,
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    },
+    {
+      "answer": "Saudi Arabia",
+      "category": 3,
+      "difficulty": 3,
+      "id": 26,
+      "question": "What is the only country with a coastline on both the Red Sea and the Persian Gulf?"
+    }
+  ],
+  "success": true,
+  "total_questions": 8
+}
+```
+## Get /categories/<int:category_id>/questions
+* General:
+  - retrieves questions by category id using url parameters.
+  - Returns an object with paginated matching questions
+* Sample:
+  - curl http://127.0.0.1:5000/categories/3/questions
+```
+{
+  "Success": true,
+  "current_category": "Geography",
+  "current_category_id": 3,
+  "questions": [
+    {
+      "answer": "Lake Victoria",
+      "category": 3,
+      "difficulty": 2,
+      "id": 13,
+      "question": "What is the largest lake in Africa?"
+    },
+    {
+      "answer": "The Palace of Versailles",
+      "category": 3,
+      "difficulty": 3,
+      "id": 14,
+      "question": "In which royal palace would you find the Hall of Mirrors?"
+    },
+    {
+      "answer": "Agra",
+      "category": 3,
+      "difficulty": 2,
+      "id": 15,
+      "question": "The Taj Mahal is located in which Indian city?"
+    },
+    {
+      "answer": "Saudi Arabia",
+      "category": 3,
+      "difficulty": 3,
+      "id": 26,
+      "question": "What is the only country with a coastline on both the Red Sea and the Persian Gulf?"
+    }
+  ],
+  "total_questions": 4
+}
+```
+
+## POST //quizzes
+* General: 
+  - An endpoint to get questions to play the quiz.
+  - Takes category and previous question parameters
+  - Return a random question within the given category, if provided, and that is not one of the previous questions.
+* Sample:
+  - curl -X POST -H "Content-Type: application/json" -d '{"previous_questions": [20, 21], "quiz_category": {"type": "Geography", "id": "3"}}' http://127.0.0.1:5000/quizzes
+```
+{
+  "question": {
+    "answer": "Agra",
+    "category": 3,
+    "difficulty": 2,
+    "id": 15,
+    "question": "The Taj Mahal is located in which Indian city?"
+  },
+  "success": true
+}
+```
+
+# Deployment N/A
+
+# Authors
+Yasir Asiri
+
+# Acknowledgements
+To my course instructors and all Udacity team, also to my session leader at Misk foundation Lujain Algholaiqa
