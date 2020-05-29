@@ -9,16 +9,57 @@ The trivia is a game that allow users to test their knowledge by playing a simpl
 4) Search for questions based on a text query string.
 5) Play the quiz game, randomizing either all questions or within a specific category. 
 
+All backend codes follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/)
 ## Getting Started
 ### Dependencies Installation:
 Developers using this project should have Python3, pip3, nodeJS, and npm installed.
 
-#### Installing frontend dependencies:
+#### Installing Backend dependencies:
+first create a virtual environment "when using Python for this projects". Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+
+```bash
+pip install -r requirements.txt
+```
+This will install all of the required packages we selected within the `requirements.txt` file.
+
+#### Installing Frontend dependencies:
 This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
 
 ```bash
 npm install
 ```
+
+## Running the Server
+From within the `backend` directory first ensure you are working using your created virtual environment.
+
+To run the server, execute:
+
+```bash
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run
+```
+## Running the Frontend
+The frontend app was built using create-react-app. In order to run the app in development mode use ```npm start```. You can change the script in the ```package.json``` file. 
+
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.<br>
+
+## APIs Testing:
+To TEST the API End points, run the following commands:
+```bash
+dropdb trivia_test
+createdb trivia_test
+psql trivia_test < trivia.psql
+python test_flaskr.py
+```
+Skip "dropdb trivia_test" command for the first time running the test.
+
+# Reference
+## Getting Started
+* 
 
 There are `TODO` comments throughout project. Start by reading the READMEs in:
 
