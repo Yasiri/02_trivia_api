@@ -1,7 +1,7 @@
 # Trivia API Project - Udacity
  
  # Full Stack API Final Project
-The trivia is a game that allow users to test their knowledge by playing a simple game of randomized questions. The goal of this project is to structure plan, implement, and test the API to Complete the trivia app. where the The application must meet the following reqirements:
+The trivia is a game that allow users to test their knowledge by playing a simple game of randomized questions. The goal of this project is to structure plan, implement, and test the API to Complete the trivia app. where the application must meet the following requirements:
 
 1) Display questions - both all questions and by category. Questions should show the question, category and difficulty rating by default and can show/hide the answer. 
 2) Delete questions.
@@ -9,18 +9,18 @@ The trivia is a game that allow users to test their knowledge by playing a simpl
 4) Search for questions based on a text query string.
 5) Play the quiz game, randomizing either all questions or within a specific category. 
 
-All backend codes follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/)
+All backend codes follow [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/)
 ## Getting Started
 ### Dependencies Installation:
 Developers using this project should have Python3, pip3, nodeJS, and npm installed.
 
 #### Installing Backend dependencies:
-first create a virtual environment "when using Python for this projects". Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+first create a virtual environment "when using Python for this projects". Once you have your virtual environment setup and running, install dependencies by navigating to the `/backend` directory and running:
 
 ```bash
 pip install -r requirements.txt
 ```
-This will install all of the required packages we selected within the `requirements.txt` file.
+This will install all the required packages we selected within the `requirements.txt` file.
 
 #### Installing Frontend dependencies:
 This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
@@ -40,7 +40,7 @@ export FLASK_ENV=development
 flask run
 ```
 ## Running the Frontend
-The frontend app was built using create-react-app. In order to run the app in development mode use ```npm start```. You can change the script in the ```package.json``` file. 
+The frontend app was built using create-react-app. To run the app in development mode use ```npm start```. You can change the script in the ```package.json``` file. 
 
 ```bash
 npm start
@@ -59,10 +59,44 @@ Skip "dropdb trivia_test" command for the first time running the test.
 
 # Reference
 ## Getting Started
-* 
+* Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, (http://127.0.0.1:5000/), which is set as a proxy in the frontend configuration.
+* Authentication: This version of the application does not require authentication or API keys.
 
+## Error Handling
+Errors are returned as JSON objects in the following format:
+```
+{
+   'success': False,
+   'error': 404,
+   'message': 'Resource Not Found'
+}
+```
+
+The API will return Four error types when requests fail:
+* 404: Resource Not Found
+* 422: Unprocessable
+* 400: Bad request
+* 500: Internal server error
 There are `TODO` comments throughout project. Start by reading the READMEs in:
 
+## Endpoints
+### GET /categories
+* General:
+** Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+** Request Arguments: None
+** Returns: An object with a single key, categories, that contains a object of id: category_string key:value pairs. 
+* Sample:
+** curl http://127.0.0.1:5000/categories
+```
+{
+  '1' : "Science",
+  '2' : "Art",
+  '3' : "Geography",
+  '4' : "History",
+  '5' : "Entertainment",
+  '6' : "Sports"
+}
+```
 1. [`./frontend/`](./frontend/README.md)
 2. [`./backend/`](./backend/README.md)
 
