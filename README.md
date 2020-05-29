@@ -1,6 +1,6 @@
 # Trivia API Project - Udacity
  
-# Full Stack API Final Project
+## Full Stack API Final Project
 The trivia is a game that allow users to test their knowledge by playing a simple game of randomized questions. The goal of this project is to structure plan, implement, and test the API to Complete the trivia app. where the application must meet the following requirements:
 
 1) Display questions - both all questions and by category. Questions should show the question, category and difficulty rating by default and can show/hide the answer. 
