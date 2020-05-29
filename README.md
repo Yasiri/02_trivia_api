@@ -635,7 +635,7 @@ The API will return Four error types when requests fail:
 }
 ```
 
-## POST //quizzes
+## POST /quizzes
 * General: 
   - An endpoint to get questions to play the quiz.
   - Takes category and previous question parameters
